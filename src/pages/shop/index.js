@@ -40,16 +40,16 @@ function shop() {
                 </div>
             </div>
 
-            <div class="number_bar">
-                <p class="aktif">1</p>
-                <p class="aktif">2</p>
-                <p class="aktif">3</p>
-                <p class="aktif">4</p>
-                <p class="aktif">5</p>
-                <p class="aktif">6</p>
-                <p class="aktif">7</p>
-                <p class="aktif">8</p>
-                <p class="aktif">9</p>
+            <div className="number_bar">
+                <p className="aktif">1</p>
+                <p className="aktif">2</p>
+                <p className="aktif">3</p>
+                <p className="aktif">4</p>
+                <p className="aktif">5</p>
+                <p className="aktif">6</p>
+                <p className="aktif">7</p>
+                <p className="aktif">8</p>
+                <p className="aktif">9</p>
             </div>
 
             <Footer/>

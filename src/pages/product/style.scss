@@ -30,23 +30,23 @@ body {
     width: 523px;
     height: 567px;
 }
-.product_conten3{
+.conten3{
     display: flex;
     flex-direction: row;
     margin-top: -50px;
 }
-.product_conten3_1 a{
+.conten3_1 a{
     display: flex;
     align-items: center;
     width: 40px;
     height: 48px;
     background-color: black;
 }
-.product_conten3_1 i{
+.conten3_1 i{
     color: white;
     margin-left: 35%;
 }
-.product_conten3_2 a{
+.conten3_2 a{
     display: flex;
     align-items: center;
     width: 40px;
@@ -54,7 +54,7 @@ body {
     background-color: black;
     margin-left: 10px;
 }
-.product_conten3_2 i{
+.conten3_2 i{
     color: white;
     margin-left: 35%;
 }
@@ -138,18 +138,18 @@ body {
     margin-bottom: 20px;
 }
         /* ------keterangan size dan add to cart--------- */
-.product_conten1{
+.conten1{
     margin-top: 40px;
     text-align: left;
 }
-.product_conten1_1{
+.conten1_1{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
 }
-.product_conten1_1 select, .product_conten1_1 option{
+.conten1_1 select, .conten1_1 option{
     font-weight: 900;
     font-size: 24px;
     line-height: 28px;
@@ -157,7 +157,7 @@ body {
     margin-left: 10px;
     border: none;
 }
-.product_conten1_2 input{
+.conten1_2 input{
     margin-top: 50px;
     width: 174px;
     height: 48px;
@@ -166,7 +166,7 @@ body {
     color: white;
 }
         /* -------------material bahan--------- */
-.product_conten2{
+.conten2{
     display: flex;
     /* flex-direction: row-reverse; */
     flex-direction: column;
