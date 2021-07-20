@@ -1,10 +1,11 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import mainPage from './pages/mainpage';
-import product from './pages/product';
-import shop from './pages/shop'
+import './App.css';
+import mainPage from './pages/mainPage';
+import product from './pages/productPage';
+import shop from './pages/shopPage'
 
 function App() {
   return (

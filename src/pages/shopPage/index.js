@@ -7,7 +7,7 @@ import CardShop from '../../components/card_shop'
 
 function shop() {
     return (
-        <div className="container">
+        <div className="cover">
             <div className="halaman3">
                 
                 <Header/>        

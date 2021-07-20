@@ -30,7 +30,7 @@ function product() {
                     <div className="title_product">
                         <div className="title_product1">Color</div>
                         <div className="title_product2">Item Type / Name
-                        </div>
+                    </div>                 
                     </div>
                     <div className="harga_product"> 
                         <div className="harga_product1">$19.99</div>

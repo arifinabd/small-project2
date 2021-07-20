@@ -10,7 +10,7 @@ function mainPage(props) {
     }
 
     return (
-        <div className="container">
+        <div className="cover">
             <div className="background1"></div>
             <div className="main_page">
                 <nav className="kecil">
