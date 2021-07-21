@@ -1,11 +1,11 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import mainPage from './pages/mainPage';
-import product from './pages/productPage';
-import shop from './pages/shopPage'
+import productPage from './pages/productPage';
+import shopPage from './pages/shopPage'
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
       <Router>
         <Switch>
         <Route component={mainPage} exact path="/"/>
-        <Route component={product} path="/cart"/>
-        <Route component={shop} path="/list-shop"/>
+        <Route component={productPage} path="/productPage/:id"/>
+        <Route component={shopPage} path="/list-shop"/>
         </Switch>
       </Router>
     </div>

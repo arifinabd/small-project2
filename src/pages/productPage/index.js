@@ -1,13 +1,17 @@
 import React from 'react'
-import "./style.scss"
-import orang from "./orang.jpg"
+import { Link } from 'react-router-dom'
 
+import "./style.scss"
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import ChevronLeft from '../../components/font_awsome/ChevronLeft'
 import ChevronRight from '../../components/font_awsome/ChevronRight'
+import Itemproducts from '../../components/products/itemProduct'
 
-function product() {
+const productPage = ({ match }) => {
+    const product = Itemproducts.find((p) => p.id === match.params.id)
+    console.log(product)
+
     return (
         <div className="counter">
             <div className="background2"></div>
@@ -15,7 +19,7 @@ function product() {
             <div className="halaman2">
 
                 <div className="page1">
-                    <div className="gambar_orang"><img src={orang} alt="orang"/></div>
+                    <div className="gambar_orang"><img src={product.image} alt={product.name}/></div>
                     <div className="conten3">
                         <div className="conten3_1"><a href="#"><ChevronLeft/></a></div>
                         <div className="conten3_2"><a href="#"><ChevronRight/></a></div>
@@ -28,17 +32,17 @@ function product() {
                         <div className="go_back"><a href="halaman1.html">GO BACK</a></div>
                     </nav> */}
                     <div className="title_product">
-                        <div className="title_product1">Color</div>
-                        <div className="title_product2">Item Type / Name
+                        <div className="title_product1">{product.type}</div>
+                        <div className="title_product2">{product.name}
                     </div>                 
                     </div>
                     <div className="harga_product"> 
-                        <div className="harga_product1">$19.99</div>
-                        <div className="harga_product2">$39.99</div>
+                        <div className="harga_product1">{product.priceDisc}</div>
+                        <div className="harga_product2">{product.priceReal}</div>
                     </div>
                     <div className="caption_product">
-                        <div className="caption_product1">Kacamata tampan dan berani</div>
-                        <div className="caption_product2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <div className="caption_product1">{product.caption}</div>
+                        <div className="caption_product2">{product.description}</div>
                     </div>
                     <div className="conten1">
                         <form action="#">
@@ -63,4 +67,4 @@ function product() {
     )
 }
 
-export default product
+export default productPage
