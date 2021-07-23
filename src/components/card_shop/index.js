@@ -1,21 +1,58 @@
 import React from 'react'
-import { Row, Container, Col } from 'react-bootstrap'
+import { Row, Container, Col, Button } from 'react-bootstrap'
+import { connect } from 'react-redux'
+import { useEffect } from 'react'
+import { withRouter } from 'react-router'
 
 import Itemproducts from '../products/itemProduct'
 import CardProduct from '../products/cardProduct'
 import "./style.scss"
+import { getProducts, addToCart } from '../../store/action/product'
 
-function CardShop() {
+function CardShop(props) {
+    useEffect(() => {
+        props.getProducts()
+    }, [])
+    console.log(props)
+
+    const handleAddToCart = (id) => {
+        props.addToCart(id)
+        console.log(props.history)
+        alert('add to cart')
+        // props.history.push('/cart')
+    }
+    
     return (
         <Container>
             <Row sm={3} md={3} lg={3} xl={3}>
                 {Itemproducts.map((product) => (
                     <Col key={product.id} >
                      <CardProduct product={product}></CardProduct>
+                     <Button variant="secondary" size="sm" onClick={() => handleAddToCart(product.id)}>
+                        ADD CART
+                    </Button>
                     </Col>
                 ))}
             </Row>
         </Container>
+
+    )
+}
+const mapStateToProps = (state) => {
+    return{
+        products: state.productReducer.products,
+        carts: state.productReducer.carts
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return{
+        getProducts: () => dispatch(getProducts()),
+        addToCart: (id) => dispatch(addToCart(id))
+    }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CardShop))
 
         // <div>
         //     <div className="conhal3_2">
@@ -57,7 +94,5 @@ function CardShop() {
         //         </div>
         //     </div>
         // </div>
-    )
-}
 
-export default CardShop
+// export default CardShop

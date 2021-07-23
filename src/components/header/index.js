@@ -23,8 +23,10 @@ function Header(props) {
                 <div className="title_halaman3"><a onClick={() => handleClickHome()}>Your Shop Name</a></div>
                 <div className="nav">
                     <div className="nav2">
+                        <form className="form">
                         <input type="text" placeholder="PRODUCT"/>
                         <a href="#"><Search/></a>
+                        </form>
                     </div>
                     <div className="nav1">
                         <div className="shopping"><a onClick={() => handleClickCart()}><ShoppingCart/></a></div>

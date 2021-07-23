@@ -1,5 +1,7 @@
 import React from 'react'
+// import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import "./style.scss"
 import Header from '../../components/header'
@@ -7,9 +9,14 @@ import Footer from '../../components/footer'
 import ChevronLeft from '../../components/font_awsome/ChevronLeft'
 import ChevronRight from '../../components/font_awsome/ChevronRight'
 import Itemproducts from '../../components/products/itemProduct'
+// import { getProducts } from '../../store/action/product'
 
-const productPage = ({ match }) => {
-    const product = Itemproducts.find((p) => p.id === match.params.id)
+const ProductPage = (props) => {
+    // useEffect(() => {
+    //     console.log(props)
+    // }, [])
+
+    const product = Itemproducts.find((p) => p.id.toString() === props.match.params.id.toString())
     console.log(product)
 
     return (
@@ -27,18 +34,14 @@ const productPage = ({ match }) => {
                 </div>
 
                 <div className="page2">
-                    {/* <nav className="nav_product">
-                        <div className="logo_shop"><a href="#"><ShoppingCart/></a></div>
-                        <div className="go_back"><a href="halaman1.html">GO BACK</a></div>
-                    </nav> */}
                     <div className="title_product">
                         <div className="title_product1">{product.type}</div>
                         <div className="title_product2">{product.name}
                     </div>                 
                     </div>
                     <div className="harga_product"> 
-                        <div className="harga_product1">{product.priceDisc}</div>
-                        <div className="harga_product2">{product.priceReal}</div>
+                        <div className="harga_product1">${product.priceDisc}</div>
+                        <div className="harga_product2">${product.priceReal}</div>
                     </div>
                     <div className="caption_product">
                         <div className="caption_product1">{product.caption}</div>
@@ -67,4 +70,17 @@ const productPage = ({ match }) => {
     )
 }
 
-export default productPage
+// const mapStateToProps = (state) => {
+//     return{
+//         products: state.productReducer.products
+//     }
+// }
+
+// const mapDispatchToProps = (dispatch) => {
+//     return{
+//         getProducts: () => dispatch(getProducts()),
+//     }
+// }
+// export default connect(mapStateToProps, mapDispatchToProps)(ProductPage)
+export default ProductPage
+
