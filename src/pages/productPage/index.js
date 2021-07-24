@@ -8,7 +8,7 @@ import Header from '../../components/header'
 import Footer from '../../components/footer'
 import ChevronLeft from '../../components/font_awsome/ChevronLeft'
 import ChevronRight from '../../components/font_awsome/ChevronRight'
-import Itemproducts from '../../components/products/itemProduct'
+import Itemproducts from '../../components/card_shop/products/itemProduct'
 // import { getProducts } from '../../store/action/product'
 
 const ProductPage = (props) => {

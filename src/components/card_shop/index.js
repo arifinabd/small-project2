@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import { useEffect } from 'react'
 import { withRouter } from 'react-router'
 
-import Itemproducts from '../products/itemProduct'
-import CardProduct from '../products/cardProduct'
+import Itemproducts from './products/itemProduct'
+import CardProduct from './products/cardProduct'
 import "./style.scss"
 import { getProducts, addToCart } from '../../store/action/product'
 
@@ -17,11 +17,10 @@ function CardShop(props) {
 
     const handleAddToCart = (id) => {
         props.addToCart(id)
-        console.log(props.history)
         alert('add to cart')
-        // props.history.push('/cart')
+        props.history.push('/cart')
     }
-    
+    console.log(props.history)
     return (
         <Container>
             <Row sm={3} md={3} lg={3} xl={3}>

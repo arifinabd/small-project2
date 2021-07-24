@@ -5,7 +5,7 @@ export const Itemproducts = [
         name: 'Nice SHIRT',
         caption: 'Kacamata tampan dan Berani',
         image: '/assets/orang.jpg',
-        priceDisc: 19.99,
+        priceDisc: 11.99,
         priceReal: 39.99,
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 
@@ -16,7 +16,7 @@ export const Itemproducts = [
         name: 'Nice SHIRT',
         caption: 'Kacamata tampan dan Berani',
         image: '/assets/orang.jpg',
-        priceDisc: 19.99,
+        priceDisc: 12.99,
         priceReal: 39.99,
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 
@@ -27,7 +27,7 @@ export const Itemproducts = [
         name: 'Nice SHIRT',
         caption: 'Kacamata tampan dan Berani',
         image: '/assets/orang.jpg',
-        priceDisc: 19.99,
+        priceDisc: 13.99,
         priceReal: 39.99,
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 
@@ -38,7 +38,7 @@ export const Itemproducts = [
         name: 'Nice SHIRT',
         caption: 'Kacamata tampan dan Berani',
         image: '/assets/orang.jpg',
-        priceDisc: 19.99,
+        priceDisc: 14.99,
         priceReal: 39.99,
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 
@@ -49,7 +49,7 @@ export const Itemproducts = [
         name: 'Nice SHIRT',
         caption: 'Kacamata tampan dan Berani',
         image: '/assets/orang.jpg',
-        priceDisc: 19.99,
+        priceDisc: 15.99,
         priceReal: 39.99,
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 
@@ -60,7 +60,7 @@ export const Itemproducts = [
         name: 'Nice SHIRT',
         caption: 'Kacamata tampan dan Berani',
         image: '/assets/orang.jpg',
-        priceDisc: 19.99,
+        priceDisc: 16.99,
         priceReal: 39.99,
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 
@@ -71,7 +71,7 @@ export const Itemproducts = [
         name: 'Nice SHIRT',
         caption: 'Kacamata tampan dan Berani',
         image: '/assets/orang.jpg',
-        priceDisc: 19.99,
+        priceDisc: 17.99,
         priceReal: 39.99,
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 
@@ -82,7 +82,7 @@ export const Itemproducts = [
         name: 'Nice SHIRT',
         caption: 'Kacamata tampan dan Berani',
         image: '/assets/orang.jpg',
-        priceDisc: 19.99,
+        priceDisc: 18.99,
         priceReal: 39.99,
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 
