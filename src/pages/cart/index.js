@@ -5,8 +5,12 @@ import { connect } from 'react-redux'
 
 import './style.scss'
 import Header from '../../components/header'
+import { deleteCart } from '../../store/action/product'
  
  const Cart = (props) => {
+     const handleCancel = (id) => {
+        props.deleteCart(id)
+     }
      console.log(props)
      return (
          <div>
@@ -41,7 +45,7 @@ import Header from '../../components/header'
                                         </td>
                                         <td>{val.priceDisc}</td>
                                         <td>{subtotal}</td>
-                                        <td><CloseButton/></td>
+                                        <td><CloseButton onClick={() =>{handleCancel(props.id)}}/></td>
                                     </tr>
                                 )
                             })}
@@ -59,6 +63,12 @@ import Header from '../../components/header'
         carts: state.productReducer.carts
     }
 }
+const mapDispatchToProps = (dispatch) => {
+    return{
+        // getProducts: () => dispatch(getProducts()),
+        deleteCart: (id) => dispatch(deleteCart(id))
+    }
+}
 
-export default connect(mapStateToProps, null)(Cart)
+export default connect(mapStateToProps, mapDispatchToProps)(Cart)
  

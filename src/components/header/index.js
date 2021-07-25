@@ -1,9 +1,11 @@
 import React from 'react'
 import { withRouter } from 'react-router'
+import { connect } from 'react-redux'
 
 import './style.scss'
 import ShoppingCart from '../font_awsome/shopping-cart'
 import Search from '../font_awsome/Search'
+import { getProducts } from '../../store/action/product'
     
 function Header(props) {
     const handleClickCart = () => {
@@ -29,7 +31,12 @@ function Header(props) {
                         </form>
                     </div>
                     <div className="nav1">
-                        <div className="shopping"><a onClick={() => handleClickCart()}><ShoppingCart/></a></div>
+                        <div className="shopping">
+                            <a onClick={() => handleClickCart()}>
+                                <ShoppingCart/> | 
+                                <span>{props.carts.length}</span>
+                            </a>
+                        </div>
                         <div className="go_back"><a onClick={() => handleClickShop()}>GO BACK</a></div>
                     </div>
                 </div>
@@ -38,4 +45,19 @@ function Header(props) {
     )
 }
 
-export default withRouter(Header)
+const mapStateToProps = (state) => {
+    return{
+        // products: state.productReducer.products,
+        carts: state.productReducer.carts
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return{
+        getProducts: () => dispatch(getProducts()),
+        // addToCart: (id) => dispatch(addToCart(id))
+    }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header))
+// export default withRouter(Header)

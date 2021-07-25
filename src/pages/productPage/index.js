@@ -1,7 +1,8 @@
 import React from 'react'
-// import { useEffect } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 
 import "./style.scss"
 import Header from '../../components/header'
@@ -9,12 +10,18 @@ import Footer from '../../components/footer'
 import ChevronLeft from '../../components/font_awsome/ChevronLeft'
 import ChevronRight from '../../components/font_awsome/ChevronRight'
 import Itemproducts from '../../components/card_shop/products/itemProduct'
-// import { getProducts } from '../../store/action/product'
+import { getProducts, addToCart } from '../../store/action/product'
 
 const ProductPage = (props) => {
-    // useEffect(() => {
-    //     console.log(props)
-    // }, [])
+    useEffect(() => {
+        props.getProducts()
+    }, [])
+
+    const handleAddToCart = (id) => {
+        props.addToCart(id)
+        alert('Add To Cart')
+        props.history.push('/cart')
+    }
 
     const product = Itemproducts.find((p) => p.id.toString() === props.match.params.id.toString())
     console.log(product)
@@ -58,7 +65,7 @@ const ProductPage = (props) => {
                                 </select>
                             </div>
                             <div className="conten1_2">
-                                <input type="submit" value="ADD TO CART"/>
+                                <input type="submit" value="ADD TO CART" onClick={() => {handleAddToCart(product.id)}}/>
                             </div>
                         </form>
                     </div>
@@ -70,17 +77,20 @@ const ProductPage = (props) => {
     )
 }
 
-// const mapStateToProps = (state) => {
-//     return{
-//         products: state.productReducer.products
-//     }
-// }
+const mapStateToProps = (state) => {
+    return{
+        products: state.productReducer.products,
+        carts: state.productReducer.carts
+    }
+}
 
-// const mapDispatchToProps = (dispatch) => {
-//     return{
-//         getProducts: () => dispatch(getProducts()),
-//     }
-// }
-// export default connect(mapStateToProps, mapDispatchToProps)(ProductPage)
-export default ProductPage
+const mapDispatchToProps = (dispatch) => {
+    return{
+        getProducts: () => dispatch(getProducts()),
+        addToCart: (id) => dispatch(addToCart(id))
+    }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProductPage))
+// export default ProductPage
 

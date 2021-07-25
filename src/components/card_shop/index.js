@@ -18,7 +18,7 @@ function CardShop(props) {
     const handleAddToCart = (id) => {
         props.addToCart(id)
         alert('add to cart')
-        props.history.push('/cart')
+        // props.history.push('/cart')
     }
     console.log(props.history)
     return (

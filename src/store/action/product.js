@@ -1,4 +1,4 @@
-import { GET_PRODUCTS, ADD_TO_CART, GET_CARTS} from "../constants";
+import { GET_PRODUCTS, ADD_TO_CART, GET_CARTS, DELETE_CART_BY_ID} from "../constants";
 
 export const getProducts = () => {
   // request ke Backend
@@ -127,6 +127,13 @@ export const addToCart = (id) => {
 export const getCarts = () => {
     return{
         type: GET_CARTS,
+    }
+}
+
+export const deleteCart = (index) => {
+    return{
+        type: DELETE_CART_BY_ID,
+        payload:index
     }
 }
   
