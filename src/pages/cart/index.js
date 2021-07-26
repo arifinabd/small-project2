@@ -11,6 +11,9 @@ import { deleteCart } from '../../store/action/product'
      const handleCancel = (id) => {
         props.deleteCart(id)
      }
+     const handleOnChange = () => {
+
+     }
      console.log(props)
      return (
          <div>
@@ -40,11 +43,11 @@ import { deleteCart } from '../../store/action/product'
                                         <td>{val.name}</td>
                                         <td>
                                             <Button variant="outline-light" size='sm' style={{fontWeight:'bold'}}> - </Button>
-                                            <input value={val.qty}/>
+                                            <input value={val.qty} onChange={() => {handleOnChange()}}/>
                                             <Button variant="outline-light" size='sm' style={{fontWeight:'bold'}}> + </Button>
                                         </td>
-                                        <td>{val.priceDisc}</td>
-                                        <td>{subtotal}</td>
+                                        <td>${val.priceDisc}</td>
+                                        <td>${subtotal}</td>
                                         <td><CloseButton onClick={() =>{handleCancel(props.id)}}/></td>
                                     </tr>
                                 )

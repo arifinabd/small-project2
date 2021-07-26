@@ -69,7 +69,7 @@ const ProductPage = (props) => {
                             </div>
                         </form>
                     </div>
-                    <div className="conten2">Mens <span>100% Cotton</span></div>
+                    <div className="conten2">100% <span>ORIGINAL</span></div>
                 </div>
             </div>
             <Footer/>
