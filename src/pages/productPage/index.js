@@ -23,7 +23,7 @@ const ProductPage = (props) => {
         props.history.push('/cart')
     }
 
-    const product = Itemproducts.find((p) => p.id.toString() === props.match.params.id.toString())
+    const product = props.products.find((p) => p.id.toString() === props.match.params.id.toString())
     console.log(product)
 
     return (

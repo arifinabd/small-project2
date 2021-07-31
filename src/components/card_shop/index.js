@@ -24,10 +24,10 @@ function CardShop(props) {
     return (
         <Container>
             <Row sm={3} md={3} lg={3} xl={3}>
-                {Itemproducts.map((product) => (
-                    <Col key={product.id} >
-                     <CardProduct product={product}></CardProduct>
-                     <Button variant="secondary" size="sm" onClick={() => handleAddToCart(product.id)}>
+                {props.products && props.products.map((val, key) => (
+                    <Col key={key} >
+                     <CardProduct product={val}></CardProduct>
+                     <Button variant="secondary" size="sm" onClick={() => handleAddToCart(val.id)}>
                         ADD CART
                     </Button>
                     </Col>

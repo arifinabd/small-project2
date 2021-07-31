@@ -34,6 +34,7 @@ const CardProduct = (props) => {
             <Card.Text as="div">
                 <div className="h3">${props.product.priceDisc}</div>
                 <div className="h5" style={{textDecoration: 'line-through'}}>${props.product.priceReal}</div>
+                <div className="h5">Stock : {props.product.stock}</div>
             </Card.Text>
             {/* <Button variant="secondary" size="sm" onClick={() => handleAddToCart(props.product.id)}>
                 ADD CART

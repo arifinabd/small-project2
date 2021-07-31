@@ -1,18 +1,35 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Card, Table } from 'react-bootstrap'
 import { Row, Container, Col, Button, CloseButton } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
 import './style.scss'
 import Header from '../../components/header'
-import { deleteCart } from '../../store/action/product'
+import { deleteCart, adjustQty } from '../../store/action/product'
  
  const Cart = (props) => {
+     console.log(props)
+     const [render, setRender] = useState(false)
+
+     useEffect(() => {
+         console.log(render);
+         setRender(false)
+     },[render])
+
      const handleCancel = (id) => {
         props.deleteCart(id)
      }
-     const handleOnChange = () => {
+     const handleOnChange = () => {}
 
+     const handleAddQty = (id, qty) => {
+        const data = {
+            id: id,
+            qty: qty + 1,
+        };
+        props.adjustQty(data);
+        console.log(props);
+        setRender(true);
+        alert('berhasil nambah');
      }
      console.log(props)
      return (
@@ -42,13 +59,20 @@ import { deleteCart } from '../../store/action/product'
                                         <td>{key + 1}</td>
                                         <td>{val.name}</td>
                                         <td>
-                                            <Button variant="outline-light" size='sm' style={{fontWeight:'bold'}}> - </Button>
-                                            <input value={val.qty} onChange={() => {handleOnChange()}}/>
-                                            <Button variant="outline-light" size='sm' style={{fontWeight:'bold'}}> + </Button>
+                                            <Button 
+                                                variant="outline-light" 
+                                                size='sm' 
+                                                style={{fontWeight:'bold'}}> - </Button>
+                                            <input type="text" value={val.qty} onChange={() => {handleOnChange()}}/>
+                                            <Button
+                                                onClick={() => {handleAddQty(val.id, val.qty)}} 
+                                                variant="outline-light" 
+                                                size='sm' 
+                                                style={{fontWeight:'bold'}}> + </Button>
                                         </td>
                                         <td>${val.priceDisc}</td>
                                         <td>${subtotal}</td>
-                                        <td><CloseButton onClick={() =>{handleCancel(props.id)}}/></td>
+                                        <td><CloseButton onClick={() => {handleCancel(props.id)}}/></td>
                                     </tr>
                                 )
                             })}
@@ -69,7 +93,8 @@ import { deleteCart } from '../../store/action/product'
 const mapDispatchToProps = (dispatch) => {
     return{
         // getProducts: () => dispatch(getProducts()),
-        deleteCart: (id) => dispatch(deleteCart(id))
+        deleteCart: (id) => dispatch(deleteCart(id)),
+        adjustQty: (data) => dispatch(adjustQty(data)),
     }
 }
 
