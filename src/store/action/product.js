@@ -1,7 +1,6 @@
 import { GET_PRODUCTS, ADD_TO_CART, GET_CARTS, DELETE_CART, ADD_QTY, REMOVE_QTY} from "../constants";
 
 export const getProducts = () => {
-  // request ke Backend
   return {
     type: GET_PRODUCTS, 
     payload: [

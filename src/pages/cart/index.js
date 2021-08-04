@@ -86,13 +86,11 @@ import { deleteCart, adjustQty } from '../../store/action/product'
  } 
  const mapStateToProps = (state) => {
     return{
-        // products: state.productReducer.products,
         carts: state.productReducer.carts
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return{
-        // getProducts: () => dispatch(getProducts()),
         deleteCart: (id) => dispatch(deleteCart(id)),
         adjustQty: (data) => dispatch(adjustQty(data)),
     }

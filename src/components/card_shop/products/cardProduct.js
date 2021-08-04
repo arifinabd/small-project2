@@ -36,26 +36,9 @@ const CardProduct = (props) => {
                 <div className="h5" style={{textDecoration: 'line-through'}}>${props.product.priceReal}</div>
                 <div className="h5">Stock : {props.product.stock}</div>
             </Card.Text>
-            {/* <Button variant="secondary" size="sm" onClick={() => handleAddToCart(props.product.id)}>
-                ADD CART
-            </Button> */}
         </Card>
     )
 }
 
-// const mapStateToProps = (state) => {
-//     return{
-//         products: state.productReducer.products,
-//         carts: state.productReducer.carts
-//     }
-// }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return{
-//         getProducts: () => dispatch(getProducts()),
-//         addToCart: (id) => dispatch(addToCart(id))
-//     }
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(CardProduct)
 export default CardProduct

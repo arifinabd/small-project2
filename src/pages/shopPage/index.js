@@ -5,7 +5,7 @@ import Header from '../../components/header'
 import Footer from '../../components/footer'
 import CardShop from '../../components/card_shop'
 
-function shop() {
+function Shop() {
     return (
         <div className="cover">
             <div className="halaman3">
@@ -57,4 +57,4 @@ function shop() {
     )
 }
 
-export default shop
+export default Shop

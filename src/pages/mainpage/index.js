@@ -4,7 +4,7 @@ import './style.scss'
 import Footer from '../../components/footer'
 import CardHome from '../../components/card_home'
 
-function mainPage(props) {
+function MainPage(props) {
     const handleClick = () => {
         props.history.push("/list-shop")
     }
@@ -41,4 +41,4 @@ function mainPage(props) {
     )
 }
 
-export default mainPage
+export default MainPage
