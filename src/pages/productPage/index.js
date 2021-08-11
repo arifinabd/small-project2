@@ -15,7 +15,7 @@ import { getProducts, addToCart } from '../../store/action/product'
 const ProductPage = (props) => {
     useEffect(() => {
         props.getProducts()
-    })
+    },[])
 
     const handleAddToCart = (id) => {
         props.addToCart(id)
