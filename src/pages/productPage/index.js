@@ -6,10 +6,9 @@ import { withRouter } from 'react-router'
 
 import "./style.scss"
 import Header from '../../components/header'
-import Footer from '../../components/footer'
+import Layout from '../../layouts/Layout'
 import ChevronLeft from '../../components/font_awsome/ChevronLeft'
 import ChevronRight from '../../components/font_awsome/ChevronRight'
-import Itemproducts from '../../components/card_shop/products/itemProduct'
 import { getProducts, addToCart } from '../../store/action/product'
 
 const ProductPage = (props) => {
@@ -29,6 +28,8 @@ const ProductPage = (props) => {
 
     return (
         <div className="counter">
+            <Layout>
+
             <div className="background2"></div>
             <Header/>
             <div className="halaman2">
@@ -73,7 +74,7 @@ const ProductPage = (props) => {
                     <div className="conten2">100% <span>ORIGINAL</span></div>
                 </div>
             </div>
-            <Footer/>
+        </Layout>
         </div>
     )
 }

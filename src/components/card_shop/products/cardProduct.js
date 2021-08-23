@@ -1,10 +1,8 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
-// import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 // import { connect } from 'react-redux'
 // import { useEffect } from 'react'
-
+import "./style.scss"
 // import { getProducts } from '../../store/action/product'
 // import { addToCart } from '../../store/action/product'
 
@@ -20,23 +18,25 @@ const CardProduct = (props) => {
     // }
 
     return (
-        <Card className="my-2 p-2 rounded">
+        <div className="cardproduct">
+        <div className="content">
             <Link to={`/productPage/${props.product.id}`}>
-            <Card.Img src={props.product.image}></Card.Img>
+            <img className="picproduct" src={props.product.image}></img>
             </Link>
-            <Card.Body>
+            <div>
                 <Link to={`/productPage/${props.product.id}`} style={{color: 'black',textDecoration: 'none'}}>
-                <Card.Title as="div">
+                <div>
                     <strong style={{fontSize:'30px'}}>{props.product.name}</strong>
-                </Card.Title>
+                </div>
                 </Link>               
-            </Card.Body>
-            <Card.Text as="div">
+            </div>
+            <div>
                 <div className="h3">${props.product.priceDisc}</div>
                 <div className="h5" style={{textDecoration: 'line-through'}}>${props.product.priceReal}</div>
                 <div className="h5">Stock : {props.product.stock}</div>
-            </Card.Text>
-        </Card>
+            </div>
+        </div>
+        </div>
     )
 }
 

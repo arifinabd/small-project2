@@ -1,10 +1,8 @@
 import React from 'react'
-import { Row, Container, Col, Button } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { useEffect } from 'react'
 import { withRouter } from 'react-router'
 
-import Itemproducts from './products/itemProduct'
 import CardProduct from './products/cardProduct'
 import "./style.scss"
 import { getProducts, addToCart } from '../../store/action/product'
@@ -22,18 +20,16 @@ function CardShop(props) {
     }
     console.log(props.history)
     return (
-        <Container>
-            <Row sm={3} md={3} lg={3} xl={3}>
+        <div className="product">
                 {props.products && props.products.map((val, key) => (
-                    <Col key={key} >
+                    <div key={key} >
                      <CardProduct product={val}></CardProduct>
-                     <Button variant="secondary" size="sm" onClick={() => handleAddToCart(val.id)}>
+                     <button variant="secondary" size="sm" onClick={() => handleAddToCart(val.id)}>
                         ADD CART
-                    </Button>
-                    </Col>
+                    </button>
+                    </div>
                 ))}
-            </Row>
-        </Container>
+        </div>
 
     )
 }

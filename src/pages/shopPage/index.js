@@ -2,12 +2,14 @@ import React from 'react'
 import "./style.scss"
 
 import Header from '../../components/header'
-import Footer from '../../components/footer'
+import Layout from '../../layouts/Layout'
 import CardShop from '../../components/card_shop'
 
 function Shop() {
     return (
         <div className="cover">
+            <Layout>
+
             <div className="halaman3">
                 
                 <Header/>        
@@ -51,8 +53,7 @@ function Shop() {
                 <p className="aktif">8</p>
                 <p className="aktif">9</p>
             </div>
-
-            <Footer/>
+            </Layout>
         </div>
     )
 }

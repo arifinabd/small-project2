@@ -1,16 +1,19 @@
 import React from 'react'
 import './style.scss'
 
-import Footer from '../../components/footer'
 import CardHome from '../../components/card_home'
+import Layout from '../../layouts/Layout'
 
 function MainPage(props) {
-    const handleClick = () => {
+    const handleClick = (e) => {
+        e.preventDefault()
         props.history.push("/list-shop")
     }
 
     return (
         <div className="cover">
+            <Layout>
+
             <div className="background1"></div>
             <div className="main_page">
                 <nav className="kecil">
@@ -26,7 +29,7 @@ function MainPage(props) {
                 <div className="sub_title">New Concept <span>of Online Shopping</span>
                 </div>
                 <div className="shop_now">
-                    <button onClick={() => handleClick()}>Shop Now</button>
+                    <button onClick={(e) => handleClick(e)}>Shop Now</button>
                 </div>
 
                 <div className="contain">
@@ -36,7 +39,7 @@ function MainPage(props) {
                     <CardHome/>
                 </div>
             </div>
-            <Footer/>
+        </Layout>
         </div>
     )
 }

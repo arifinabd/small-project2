@@ -31,11 +31,13 @@ function Header(props) {
                         </form>
                     </div>
                     <div className="nav1">
+                        <div style={{display: 'flex', flexDirection: 'row', padding:'10px'}}>
                         <div className="shopping">
                             <a onClick={() => handleClickCart()}>
                                 <ShoppingCart/> | 
                                 <span>{props.carts.length}</span>
                             </a>
+                        </div>
                         </div>
                         <div className="go_back"><a onClick={() => handleClickShop()}>GO BACK</a></div>
                     </div>

@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import { Card, Table } from 'react-bootstrap'
-import { Row, Container, Col, Button, CloseButton } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
 import './style.scss'
 import Header from '../../components/header'
+import Layout from '../../layouts/Layout'
 import { deleteCart, adjustQty } from '../../store/action/product'
  
  const Cart = (props) => {
@@ -34,13 +33,15 @@ import { deleteCart, adjustQty } from '../../store/action/product'
      console.log(props)
      return (
          <div>
+            <Layout>
             <Header/>
+
              <h1>CART LIST</h1>
-             <div>
+             <div className="cartsummary">
                 {props.carts.length < 1 ? (
                     <h2>Cart Is Empty!</h2>
-                ): (
-                    <Table width="80%">
+                    ): (
+                        <table width="80%">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -59,34 +60,38 @@ import { deleteCart, adjustQty } from '../../store/action/product'
                                         <td>{key + 1}</td>
                                         <td>{val.name}</td>
                                         <td>
-                                            <Button 
+                                            <button 
                                                 variant="outline-light" 
                                                 size='sm' 
-                                                style={{fontWeight:'bold'}}> - </Button>
+                                                style={{fontWeight:'bold'}}> - </button>
                                             <input type="text" value={val.qty} onChange={() => {handleOnChange()}}/>
-                                            <Button
+                                            <button
                                                 onClick={() => {handleAddQty(val.id, val.qty)}} 
                                                 variant="outline-light" 
                                                 size='sm' 
-                                                style={{fontWeight:'bold'}}> + </Button>
+                                                style={{fontWeight:'bold'}}> + </button>
                                         </td>
                                         <td>${val.priceDisc}</td>
                                         <td>${subtotal}</td>
-                                        <td><CloseButton onClick={() => {handleCancel(props.id)}}/></td>
+                                        <td><button onClick={() => {handleCancel(props.id)}}>X</button></td>
                                     </tr>
                                 )
                             })}
                         </tbody>
-                    </Table>
+                    </table>
                 )} 
-             </div>
-             
-         </div>
+            </div>
+            <div>
+                <h2>Total : 200000</h2>
+            <button>Checkout</button>
+        </div>
+        </Layout>
+        </div>
      )
  } 
  const mapStateToProps = (state) => {
-    return{
-        carts: state.productReducer.carts
+     return{
+         carts: state.productReducer.carts
     }
 }
 const mapDispatchToProps = (dispatch) => {
